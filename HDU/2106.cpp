@@ -1,0 +1,22 @@
+#include<cstdio>
+#include<cmath>
+main()
+{
+	int t,k,num,sum=0,i; //k进制下值为num的数 
+	while(scanf("%d%*c",&t)!=EOF){
+		while(t--){
+			i=0;
+			scanf("%d(%d)",&num,&k);
+			while(num){
+				if(k==10){
+				sum+=num;
+				break;
+			}
+				sum+=num%10*pow(k,i++);
+				num/=10;
+			}
+		}
+		printf("%d\n",sum);
+		sum=0;
+	}
+}
